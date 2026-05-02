@@ -71,6 +71,11 @@
 				"command": "telos.toggleMode",
 				"title": "Telos: Toggle Writing / Coding Mode",
 				"category": "Telos"
+			},
+			{
+				"command": "telos.home",
+				"title": "Telos: Home",
+				"category": "Telos"
 			}
 		],
 		"keybindings": [
@@ -87,6 +92,13 @@
 				"mac": "alt+cmd+w",
 				"win": "alt+ctrl+w",
 				"linux": "alt+ctrl+w"
+			},
+			{
+				"command": "telos.home",
+				"key": "alt+cmd+h",
+				"mac": "alt+cmd+h",
+				"win": "alt+ctrl+h",
+				"linux": "alt+ctrl+h"
 			}
 		],
 		"configurationDefaults": {

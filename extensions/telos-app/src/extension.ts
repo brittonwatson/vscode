@@ -7,6 +7,7 @@ import * as fs from 'fs';
 import * as os from 'os';
 import * as path from 'path';
 import * as vscode from 'vscode';
+import { TelosHome } from './home.js';
 
 const SUBSTRATE_PATH = path.join(os.homedir(), '.telos', 'repo');
 const MODE_KEY = 'telos.mode';
@@ -51,6 +52,7 @@ export function activate(context: vscode.ExtensionContext): void {
 		vscode.commands.registerCommand('telos.signOut', signOutPlaceholder),
 		vscode.commands.registerCommand('telos.toggleMode', () => toggleMode(context)),
 		vscode.commands.registerCommand('telos.setMode', (mode: TelosMode) => setMode(context, mode)),
+		vscode.commands.registerCommand('telos.home', () => TelosHome.show(context)),
 	);
 
 	context.subscriptions.push(
@@ -72,9 +74,29 @@ export function activate(context: vscode.ExtensionContext): void {
 	updateStatusBar(currentMode(context));
 	statusBarItem.show();
 
-	if (vscode.workspace.workspaceFolders === undefined) {
-		void maybeOpenSubstrateOnLaunch();
+	// First-launch UX: open the substrate folder if it exists, then show
+	// the Telos Home view as the front door. Home is what the user sees
+	// instead of an empty editor or VS Code's welcome.
+	void bootstrap(context);
+}
+
+async function bootstrap(context: vscode.ExtensionContext): Promise<void> {
+	if (
+		vscode.workspace.workspaceFolders === undefined &&
+		fs.existsSync(SUBSTRATE_PATH)
+	) {
+		// Open substrate quietly (no new window). After it opens, the
+		// extension reactivates in the new window and bootstrap runs
+		// again — second time, the folder IS open, and we fall through
+		// to showing Home.
+		await vscode.commands.executeCommand(
+			'vscode.openFolder',
+			vscode.Uri.file(SUBSTRATE_PATH),
+			{ forceNewWindow: false },
+		);
+		return;
 	}
+	TelosHome.show(context);
 }
 
 export function deactivate(): void {
@@ -119,17 +141,6 @@ function updateStatusBar(mode: TelosMode): void {
 	// status bar. Telos's voice is "matter-of-fact, not announcement."
 	statusBarItem.text = `· ${mode}`;
 	statusBarItem.tooltip = `Telos mode — click or press ⌥⌘W to toggle.`;
-}
-
-async function maybeOpenSubstrateOnLaunch(): Promise<void> {
-	if (!fs.existsSync(SUBSTRATE_PATH)) {
-		return;
-	}
-	await vscode.commands.executeCommand(
-		'vscode.openFolder',
-		vscode.Uri.file(SUBSTRATE_PATH),
-		{ forceNewWindow: false },
-	);
 }
 
 async function openSubstrate(): Promise<void> {
