@@ -1,0 +1,22 @@
+{
+  "name": "theme-telos",
+  "displayName": "Telos",
+  "description": "The default Telos color theme — warm dark, amber for agent state.",
+  "version": "0.0.1",
+  "publisher": "telos",
+  "license": "MIT",
+  "engines": {
+    "vscode": "*"
+  },
+  "categories": ["Themes"],
+  "contributes": {
+    "themes": [
+      {
+        "id": "Telos Dark",
+        "label": "Telos Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/telos-dark.json"
+      }
+    ]
+  }
+}

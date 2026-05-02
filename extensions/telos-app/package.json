@@ -1,0 +1,84 @@
+{
+	"name": "telos-app",
+	"displayName": "Telos",
+	"description": "The Telos workbench layer: substrate, agent, and the integrated life of work.",
+	"version": "0.0.1",
+	"publisher": "telos",
+	"license": "MIT",
+	"engines": {
+		"vscode": "*"
+	},
+	"capabilities": {
+		"virtualWorkspaces": false,
+		"untrustedWorkspaces": {
+			"supported": true
+		}
+	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./out/extension",
+	"scripts": {
+		"compile": "gulp compile-extension:telos-app",
+		"watch": "gulp watch-extension:telos-app"
+	},
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "telos",
+					"title": "Telos",
+					"icon": "media/telos-icon.svg"
+				}
+			]
+		},
+		"views": {
+			"telos": [
+				{
+					"id": "telos.agentDrafts",
+					"name": "Awaiting Review",
+					"icon": "media/telos-icon.svg"
+				},
+				{
+					"id": "telos.briefings",
+					"name": "Briefings",
+					"icon": "media/telos-icon.svg"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "telos.runAgent",
+				"title": "Telos: Run Agent",
+				"category": "Telos"
+			},
+			{
+				"command": "telos.openSubstrate",
+				"title": "Telos: Open Substrate",
+				"category": "Telos"
+			},
+			{
+				"command": "telos.signIn",
+				"title": "Telos: Sign In",
+				"category": "Telos"
+			},
+			{
+				"command": "telos.signOut",
+				"title": "Telos: Sign Out",
+				"category": "Telos"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "telos.runAgent",
+				"key": "cmd+.",
+				"mac": "cmd+.",
+				"win": "ctrl+.",
+				"linux": "ctrl+."
+			}
+		]
+	},
+	"devDependencies": {
+		"@types/node": "22.x"
+	}
+}
