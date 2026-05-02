@@ -74,29 +74,11 @@ export function activate(context: vscode.ExtensionContext): void {
 	updateStatusBar(currentMode(context));
 	statusBarItem.show();
 
-	// First-launch UX: open the substrate folder if it exists, then show
-	// the Telos Home view as the front door. Home is what the user sees
-	// instead of an empty editor or VS Code's welcome.
-	void bootstrap(context);
-}
-
-async function bootstrap(context: vscode.ExtensionContext): Promise<void> {
-	if (
-		vscode.workspace.workspaceFolders === undefined &&
-		fs.existsSync(SUBSTRATE_PATH)
-	) {
-		// Open substrate quietly (no new window). After it opens, the
-		// extension reactivates in the new window and bootstrap runs
-		// again — second time, the folder IS open, and we fall through
-		// to showing Home.
-		await vscode.commands.executeCommand(
-			'vscode.openFolder',
-			vscode.Uri.file(SUBSTRATE_PATH),
-			{ forceNewWindow: false },
-		);
-		return;
-	}
-	TelosHome.show(context);
+	// The fork is invoked by Telos as the editor surface; Telos's React
+	// shell is the home now. The fork no longer auto-shows a Home view.
+	// The Telos: Home command (⌥⌘H) is still available if a user wants
+	// the in-fork Home for any reason, but the default is to leave the
+	// editor as the editor.
 }
 
 export function deactivate(): void {
