@@ -76,7 +76,92 @@
 				"win": "ctrl+.",
 				"linux": "ctrl+."
 			}
-		]
+		],
+		"configurationDefaults": {
+			"workbench.colorTheme": "Telos Dark",
+			"workbench.preferredDarkColorTheme": "Telos Dark",
+
+			"workbench.layoutControl.enabled": false,
+			"window.commandCenter": false,
+			"window.menuBarVisibility": "compact",
+			"workbench.statusBar.visible": false,
+			"workbench.activityBar.location": "default",
+			"breadcrumbs.enabled": false,
+
+			"workbench.editor.showTabs": "single",
+			"workbench.editor.editorActionsLocation": "hidden",
+			"workbench.editor.empty.hint": "hidden",
+			"workbench.startupEditor": "none",
+			"workbench.tips.enabled": false,
+
+			"editor.minimap.enabled": false,
+			"editor.glyphMargin": false,
+			"editor.guides.indentation": false,
+			"editor.guides.bracketPairs": false,
+			"editor.renderLineHighlight": "none",
+			"editor.scrollbar.verticalScrollbarSize": 8,
+			"editor.scrollbar.horizontalScrollbarSize": 8,
+			"editor.overviewRulerBorder": false,
+			"editor.hideCursorInOverviewRuler": true,
+			"editor.cursorBlinking": "smooth",
+			"editor.cursorSmoothCaretAnimation": "on",
+			"editor.cursorWidth": 2,
+			"editor.smoothScrolling": true,
+			"editor.fontFamily": "'JetBrains Mono', ui-monospace, monospace",
+			"editor.fontSize": 14,
+			"editor.lineHeight": 1.65,
+			"editor.fontLigatures": true,
+			"editor.padding.top": 32,
+			"editor.padding.bottom": 32,
+			"editor.wordWrap": "on",
+			"editor.wrappingIndent": "none",
+			"editor.lineDecorationsWidth": 14,
+			"editor.suggest.showStatusBar": false,
+			"editor.parameterHints.enabled": true,
+			"editor.unicodeHighlight.invisibleCharacters": false,
+			"editor.unicodeHighlight.ambiguousCharacters": false,
+			"editor.bracketPairColorization.enabled": false,
+			"editor.occurrencesHighlight": "off",
+			"editor.selectionHighlight": false,
+
+			"workbench.list.smoothScrolling": true,
+			"workbench.tree.indent": 14,
+			"workbench.tree.renderIndentGuides": "none",
+			"workbench.iconTheme": null,
+			"explorer.compactFolders": false,
+			"explorer.openEditors.visible": 0,
+			"explorer.decorations.colors": false,
+			"explorer.decorations.badges": false,
+			"explorer.sortOrder": "type",
+			"outline.icons": false,
+			"outline.problems.enabled": false,
+
+			"terminal.integrated.fontFamily": "'JetBrains Mono', ui-monospace, monospace",
+			"terminal.integrated.fontSize": 13,
+			"terminal.integrated.lineHeight": 1.4,
+			"terminal.integrated.gpuAcceleration": "on",
+			"terminal.integrated.minimumContrastRatio": 1,
+			"terminal.integrated.shellIntegration.decorationsEnabled": "never",
+
+			"window.title": "${activeEditorShort}${separator}Telos",
+			"window.density.editorTabHeight": "compact",
+
+			"[markdown]": {
+				"editor.fontFamily": "'Fraunces', 'Iowan Old Style', Georgia, serif",
+				"editor.fontSize": 17,
+				"editor.lineHeight": 1.75,
+				"editor.lineNumbers": "off",
+				"editor.wordWrap": "bounded",
+				"editor.wordWrapColumn": 70,
+				"editor.padding.top": 56,
+				"editor.padding.bottom": 120,
+				"editor.quickSuggestions": {
+					"other": "off",
+					"comments": "off",
+					"strings": "off"
+				}
+			}
+		}
 	},
 	"devDependencies": {
 		"@types/node": "22.x"
