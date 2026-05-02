@@ -66,6 +66,11 @@
 				"command": "telos.signOut",
 				"title": "Telos: Sign Out",
 				"category": "Telos"
+			},
+			{
+				"command": "telos.toggleMode",
+				"title": "Telos: Toggle Writing / Coding Mode",
+				"category": "Telos"
 			}
 		],
 		"keybindings": [
@@ -75,6 +80,13 @@
 				"mac": "cmd+.",
 				"win": "ctrl+.",
 				"linux": "ctrl+."
+			},
+			{
+				"command": "telos.toggleMode",
+				"key": "alt+cmd+w",
+				"mac": "alt+cmd+w",
+				"win": "alt+ctrl+w",
+				"linux": "alt+ctrl+w"
 			}
 		],
 		"configurationDefaults": {
@@ -84,7 +96,6 @@
 			"workbench.layoutControl.enabled": false,
 			"window.commandCenter": false,
 			"window.menuBarVisibility": "compact",
-			"workbench.statusBar.visible": false,
 			"workbench.activityBar.location": "default",
 			"breadcrumbs.enabled": false,
 
@@ -144,23 +155,7 @@
 			"terminal.integrated.shellIntegration.decorationsEnabled": "never",
 
 			"window.title": "${activeEditorShort}${separator}Telos",
-			"window.density.editorTabHeight": "compact",
-
-			"[markdown]": {
-				"editor.fontFamily": "'Fraunces', 'Iowan Old Style', Georgia, serif",
-				"editor.fontSize": 17,
-				"editor.lineHeight": 1.75,
-				"editor.lineNumbers": "off",
-				"editor.wordWrap": "bounded",
-				"editor.wordWrapColumn": 70,
-				"editor.padding.top": 56,
-				"editor.padding.bottom": 120,
-				"editor.quickSuggestions": {
-					"other": "off",
-					"comments": "off",
-					"strings": "off"
-				}
-			}
+			"window.density.editorTabHeight": "compact"
 		}
 	},
 	"devDependencies": {
