@@ -92,11 +92,13 @@
 		"configurationDefaults": {
 			"workbench.colorTheme": "Telos Dark",
 			"workbench.preferredDarkColorTheme": "Telos Dark",
+			"workbench.preferredLightColorTheme": "Telos Light",
 
 			"workbench.layoutControl.enabled": false,
 			"window.commandCenter": false,
 			"window.menuBarVisibility": "compact",
-			"workbench.activityBar.location": "default",
+			"workbench.activityBar.location": "hidden",
+			"workbench.sideBar.location": "left",
 			"breadcrumbs.enabled": false,
 
 			"workbench.editor.showTabs": "single",

@@ -28,7 +28,6 @@ const CODING_SETTINGS: Record<string, unknown> = {
 	'editor.padding.top': 32,
 	'editor.padding.bottom': 32,
 	'editor.wordWrap': 'on',
-	'workbench.activityBar.location': 'default',
 };
 
 const WRITING_SETTINGS: Record<string, unknown> = {
@@ -40,7 +39,6 @@ const WRITING_SETTINGS: Record<string, unknown> = {
 	'editor.padding.bottom': 120,
 	'editor.wordWrap': 'bounded',
 	'editor.wordWrapColumn': 70,
-	'workbench.activityBar.location': 'hidden',
 };
 
 let statusBarItem: vscode.StatusBarItem | undefined;

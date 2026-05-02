@@ -16,6 +16,12 @@
         "label": "Telos Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/telos-dark.json"
+      },
+      {
+        "id": "Telos Light",
+        "label": "Telos Light",
+        "uiTheme": "vs",
+        "path": "./themes/telos-light.json"
       }
     ]
   }
